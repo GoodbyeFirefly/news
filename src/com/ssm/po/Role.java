@@ -1,5 +1,7 @@
 package com.ssm.po;
 import java.util.List;
+import java.util.Objects;
+
 public class Role {
 	private Integer roleId;
 	private String roleName;
@@ -25,5 +27,20 @@ public class Role {
 	@Override
 	public String toString() {
 		return "Role [roleId=" + roleId + ", roleName=" + roleName + ", userList=" + userList + "]";
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Role role = (Role) o;
+		return Objects.equals(roleId, role.roleId) &&
+				Objects.equals(roleName, role.roleName) &&
+				Objects.equals(userList, role.userList);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(roleId, roleName, userList);
 	}
 }
