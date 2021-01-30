@@ -1,5 +1,7 @@
 package com.ssm.po;
 import java.util.Date;
+import java.util.Objects;
+
 public class User {
 	private Integer userId;
 	private String userName;
@@ -70,6 +72,27 @@ public class User {
 		return "User [userId=" + userId + ", userName=" + userName + ", loginName=" + loginName + ", password="
 				+ password + ", tel=" + tel + ", registerTime=" + registerTime + ", status=" + status + ", roleId="
 				+ roleId + ", roleName=" + roleName + "]";
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		User user = (User) o;
+		return Objects.equals(userId, user.userId) &&
+				Objects.equals(userName, user.userName) &&
+				Objects.equals(loginName, user.loginName) &&
+				Objects.equals(password, user.password) &&
+				Objects.equals(tel, user.tel) &&
+				Objects.equals(registerTime, user.registerTime) &&
+				Objects.equals(status, user.status) &&
+				Objects.equals(roleId, user.roleId) &&
+				Objects.equals(roleName, user.roleName);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(userId, userName, loginName, password, tel, registerTime, status, roleId, roleName);
 	}
 }
 
