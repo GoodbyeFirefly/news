@@ -1,5 +1,7 @@
 package com.ssm.po;
 import java.util.Date;
+import java.util.Objects;
+
 public class News {
 	private Integer newsId;
 	private String title;
@@ -99,5 +101,30 @@ public class News {
 				+ ", contentAbstract=" + contentAbstract + ", keywords=" + keywords + ", author=" + author
 				+ ", publishTime=" + publishTime + ", clicks=" + clicks + ", publishStatus=" + publishStatus
 				+ ", categoryId=" + categoryId + ", categoryName=" + categoryName + ", userId=" + userId + "]";
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		News news = (News) o;
+		return Objects.equals(newsId, news.newsId) &&
+				Objects.equals(title, news.title) &&
+				Objects.equals(contentTitle, news.contentTitle) &&
+				Objects.equals(content, news.content) &&
+				Objects.equals(contentAbstract, news.contentAbstract) &&
+				Objects.equals(keywords, news.keywords) &&
+				Objects.equals(author, news.author) &&
+				Objects.equals(publishTime, news.publishTime) &&
+				Objects.equals(clicks, news.clicks) &&
+				Objects.equals(publishStatus, news.publishStatus) &&
+				Objects.equals(categoryId, news.categoryId) &&
+				Objects.equals(categoryName, news.categoryName) &&
+				Objects.equals(userId, news.userId);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(newsId, title, contentTitle, content, contentAbstract, keywords, author, publishTime, clicks, publishStatus, categoryId, categoryName, userId);
 	}
 }
