@@ -1,0 +1,6 @@
+projectKey=news
+serverUrl=http://127.0.0.1:9000
+serverVersion=6.7.4.38452
+dashboardUrl=http://127.0.0.1:9000/dashboard/index/news
+ceTaskId=AXdRZ7BZjIZ5qmW-FA5t
+ceTaskUrl=http://127.0.0.1:9000/api/ce/task?id=AXdRZ7BZjIZ5qmW-FA5t
