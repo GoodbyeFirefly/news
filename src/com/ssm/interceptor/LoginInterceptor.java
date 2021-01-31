@@ -8,6 +8,8 @@ import com.ssm.po.User;
 public class LoginInterceptor implements HandlerInterceptor{
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+		//故意引入错误，观察sonarqube能否有效检测出
+		int tem = 1/0;
 		//获取请求的URL
 		String url=request.getRequestURI();
 		//除了登录请求外，其他的URL都进行拦截控制
